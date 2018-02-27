@@ -1,0 +1,24 @@
+{
+  "env": {
+    "es6": true,
+    "node": true
+  },
+
+  "parserOptions": {
+    "sourceType": "module"
+  },
+
+  "extends": "eslint:recommended",
+
+  "rules": {
+    "linebreak-style": ["error", "unix"],
+    "indent": ["error", 2],
+    "semi": ["error", "always"],
+    "comma-dangle": ["error", "always-multiline"],
+    "no-cond-assign": ["error", "always"],
+    "no-empty": ["error", { "allowEmptyCatch": true }],
+    "no-multiple-empty-lines": ["error", { "max": 1, "maxBOF": 0, "maxEOF": 1 }],
+    "max-len": ["warn", { "code": 160 }],
+    "no-tabs": ["error"]
+  }
+}
