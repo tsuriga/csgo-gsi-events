@@ -4,3 +4,6 @@ node_modules_bak/
 
 # Build dir
 dist/
+
+# Test build dir
+test-build/

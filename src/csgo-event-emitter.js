@@ -1,6 +1,5 @@
 import EventEmitter from 'events';
 import http from 'http';
-import assert from 'assert';
 
 import { get } from 'lodash';
 
@@ -11,19 +10,19 @@ class CsgoEventEmitter extends EventEmitter {
   /**
    * @constructor
    * @param {object} options
-   * @param {string} options.host - GSI event recipient server's host
-   * @param {number} options.port - GSI event recipient server's port
-   * @param {string} options.authToken - [OPTIONAL] Auth token
+   * @param {string} options.host - [OPTIONAL] GSI event recipient server's host
+   * @param {number} options.port - [OPTIONAL] GSI event recipient server's port
+   * @param {string} options.authToken - [OPTIONAL] Auth token (if using any)
+   * @param {boolean} options.serverless - [OPTIONAL] True if emitter is to be initialised without server
    */
   constructor(options) {
     super();
 
     this.options = options;
 
-    assert.ok(this.options.host);
-    assert.ok(this.options.port);
-
-    this.createServer();
+    if (!this.options.serverless) {
+      this.createServer();
+    }
   }
 
   /**

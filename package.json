@@ -6,8 +6,7 @@
   "scripts": {
     "build": "babel src --presets babel-preset-es2015 --out-dir dist",
     "docs": "jsdoc2md src/*.js > docs/api.md",
-    "start": "npm run build && node dist/index.js",
-    "test": "test"
+    "test": "npm run build && babel test --presets babel-preset-es2015 --out-dir test-build/ && ava test-build/**/*.spec.js"
   },
   "repository": {
     "type": "git",
